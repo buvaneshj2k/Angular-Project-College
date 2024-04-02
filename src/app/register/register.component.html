@@ -1,0 +1,154 @@
+<section>
+  <form #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="text-center">
+      <h1>Registration Page</h1>
+      <div id="border" class="border border-dark border-2 rounded">
+        <div class="row">
+          <div class="col-2">
+            <label for="name">Name:</label>
+          </div>
+          <div class="col">
+            <input type="text" name="name" id="name" class="form-control" [(ngModel)]="formData.name" required
+              pattern="[a-zA-Z\s.]+" #nameip=ngModel>
+          </div>
+          <div class="col-2">
+            <label for="dob">DOB:</label>
+          </div>
+          <div class="col">
+            <input type="date" name="dob" id="dob" class="form-control" [(ngModel)]="formData.dob" required
+              #dobip1=ngModel>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div *ngIf="nameip.touched">
+              <div *ngIf="nameip.errors?.['pattern']" class="text-danger text-end">Please enter a valid name</div>
+            </div>
+          </div>
+          <div class="col">
+            <div *ngIf="dobip1.touched">
+              <div *ngIf="dobip1.errors?.['required']" class="text-danger text-end">Date of birth is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-2"><label for="email">Email:</label></div>
+          <div class="col"><input type="email" name="email" id="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="formData.email" required #emailip=ngModel>
+          </div>
+          <div class="col-2"><label for="cont">Contact:</label></div>
+          <div class="col"><input type="text" name="cont" id="cont" class="form-control" [(ngModel)]="formData.contact" required minlength=10 maxlength=10 #contactip=ngModel></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div *ngIf="emailip.touched">
+              <div *ngIf="emailip.errors?.['pattern']" class="text-danger text-end">Please enter a valid email</div>
+            </div>
+          </div>
+          <div class="col">
+            <div *ngIf="contactip.touched">
+              <div *ngIf="contactip.errors?.['minlength']" class="text-danger text-end">Please enter a valid Mobile
+                Number</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-2"><label for="father">Father Name:</label></div>
+          <div class="col"><input type="text" name="father" id="father" class="form-control" [(ngModel)]="formData.father_name" required pattern="[a-zA-Z\s.]+" #father_nameip=ngModel></div>
+          <div class="col-2"><label for="mother">Mother Name:</label></div>
+          <div class="col"><input type="text" name="mother" id="mother" class="form-control" [(ngModel)]="formData.mother_name" required pattern="[a-zA-Z\s.]+" #mother_nameip=ngModel></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div *ngIf="father_nameip.touched">
+              <div *ngIf="father_nameip.errors?.['pattern']" class="text-danger text-end">Please enter a valid name</div>
+            </div>
+          </div>
+          <div class="col">
+            <div *ngIf="mother_nameip.touched">
+              <div *ngIf="mother_nameip.errors?.['pattern']" class="text-danger text-end">Please enter a valid name</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-2"><label for="contact">Father Number:</label></div>
+          <div class="col"><input type="text" name="contact" id="contact" class="form-control" [(ngModel)]="formData.father_contact" required minlength=10 maxlength=10 #father_contactip=ngModel></div>
+          <div class="col-2"><label for="altercontact">Mother Number:</label></div>
+          <div class="col"><input type="text" name="altercontact" id="altercontact" class="form-control" [(ngModel)]="formData.mother_contact" required minlength=10 maxlength=10 #mother_contactip=ngModel></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div *ngIf="father_contactip.touched">
+              <div *ngIf="father_contactip.errors?.['minlength']" class="text-danger text-end">Please enter a valid number</div>
+            </div>
+          </div>
+          <div class="col">
+            <div *ngIf="mother_contactip.touched">
+              <div *ngIf="mother_contactip.errors?.['minlength']" class="text-danger text-end">Please enter a valid number</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-2 ms-5"><label for="10thmark">10th Total Mark:</label></div>
+          <div class="col me-5">
+            <input type="number" name="10thmark" id="10thmark" class="form-control" [(ngModel)]="formData.tenth_mark" required min=100 max=500 #tenth_markip=ngModel ></div>
+          <div class="col-2 ms-5"><label for="12thmark">12th Total Mark:</label></div>
+          <div class="col me-5">
+            <input type="number" name="12thmark" id="12thmark" class="form-control" [(ngModel)]="formData.twelth_mark" required min=400 max=1200 #twelth_markip=ngModel>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div *ngIf="tenth_markip.touched">
+              <div *ngIf="tenth_markip.errors?.['min']" class="text-danger text-end">Please enter a valid Mark</div>
+              <div *ngIf="tenth_markip.errors?.['max']" class="text-danger text-end">Please enter a valid Mark</div>
+            </div>
+          </div>
+          <div class="col">
+            <div *ngIf="twelth_markip.touched">
+              <div *ngIf="twelth_markip.errors?.['min']" class="text-danger text-end">Please enter a valid number</div>
+              <div *ngIf="twelth_markip.errors?.['max']" class="text-danger text-end">Please enter a valid number</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-2"><label for="physics">Physics Mark:</label></div>
+          <div class="col"><input type="number" name="physics" id="physics" class="form-control" [(ngModel)]="formData.physics_mark" required min=50 max=200 #physics_markip=ngModel></div>
+          <div class="col-2"><label for="chemistry">Chemistry Mark:</label></div>
+          <div class="col"><input type="number" name="chemistry" id="chemistry" class="form-control" [(ngModel)]="formData.chemistry_mark" required min=50 max=200 #chemistry_markip=ngModel></div>
+          <div class="col-2"><label for="maths">Maths Mark:</label></div>
+          <div class="col"><input type="number" name="maths" id="maths" class="form-control" [(ngModel)]="formData.maths_mark" required min=50 max=200 #maths_markip=ngModel></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div *ngIf="physics_markip.touched">
+              <div *ngIf="physics_markip.errors?.['min']" class="text-danger text-end">Please enter a valid Mark</div>
+              <div *ngIf="physics_markip.errors?.['max']" class="text-danger text-end">Please enter a valid Mark</div>
+            </div>
+          </div>
+          <div class="col">
+            <div *ngIf="chemistry_markip.touched">
+              <div *ngIf="chemistry_markip.errors?.['min']" class="text-danger text-end">Please enter a valid number</div>
+              <div *ngIf="chemistry_markip.errors?.['max']" class="text-danger text-end">Please enter a valid number</div>
+            </div>
+          </div>
+          <div class="col">
+            <div *ngIf="maths_markip.touched">
+              <div *ngIf="maths_markip.errors?.['min']" class="text-danger text-end">Please enter a valid number</div>
+              <div *ngIf="maths_markip.errors?.['max']" class="text-danger text-end">Please enter a valid number</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-2"><label for="12thmarksheet">12th Mark Sheet:</label></div>
+          <div class="col"><input type="file" name="12thmarksheet" id="12thmarksheet" class="form-control" required (click)="generateAcknowledgementNumber()"></div>
+        </div>
+        <div class="row mt-5">
+          <div class="col"> <button type="submit" class="btn btn-primary"
+              [disabled]="registrationForm.invalid">Submit</button></div>
+          <div class="col"> <button type="reset" class="btn btn-primary">Reset</button></div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

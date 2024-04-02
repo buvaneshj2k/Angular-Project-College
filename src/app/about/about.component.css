@@ -1,0 +1,45 @@
+section{
+    background-image: url(https://img.freepik.com/free-photo/pieces-blue-stationery_23-2148169528.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+#sec1{
+    text-align: center;
+    backdrop-filter: blur(7px);
+}
+#sec1 img{
+    height: 600px;
+    width: auto;
+    margin: auto;
+
+}
+.carousel-control-prev,.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#sec2{
+    color:antiquewhite;
+    text-shadow: 1px 2px black;
+    backdrop-filter: blur(7px);
+}
+#sec2 li{
+    text-align: justify;
+}
+#sec2 img{
+    border-radius: 50%;
+}
+#dev img{
+    height: 300px;
+}
+#dev,#dep{
+    backdrop-filter: blur(8px);
+}
+#sec3{
+    background-image: url(https://panimalar.ac.in/assets/images/BE-CSE/cse-banner-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

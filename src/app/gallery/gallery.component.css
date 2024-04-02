@@ -1,0 +1,31 @@
+#sec1 img{
+    height: 600px;
+}
+#sec2 .card{
+    width: 440px;
+    height: 250px;
+    margin: auto;
+}
+
+#sec3{
+    background-image: url(https://t4.ftcdn.net/jpg/02/55/58/39/360_F_255583916_kczGPyGpxdLQG4gcXsSshweErOpMe0kE.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sec3 .col{
+    width: 440px;
+    height: 350px;
+    margin: auto;
+}
+#sec4 .card{
+    width: 440px;
+    height: 350px;
+    margin: auto;
+}
+#sec4 img{
+    height: 300px;
+}
+#article1 img{
+    height: 600px;
+}

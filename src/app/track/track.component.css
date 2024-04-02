@@ -1,0 +1,12 @@
+section{
+    background-image: url(https://img.freepik.com/free-photo/pieces-blue-stationery_23-2148169528.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+#border{
+    backdrop-filter: blur(6px);
+}
+section,#border{
+    padding: 50px;
+}

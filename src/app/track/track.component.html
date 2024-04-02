@@ -1,0 +1,39 @@
+<section>
+    <form #trackForm="ngForm">
+        <div class="container text-center  m-5">
+            <h1>Track Registered Application</h1>
+            <div id="border" class="border border-2 border-dark rounded m-5">
+                <div class="row mt-5">
+                    <div class="col-4"><label for="acknumber">Acknowledgement Number:</label></div>
+                    <div class="col"><input type="text" name="acknumber" id="acknumber" class="form-control" [(ngModel)]="ack" required #ackip=ngModel></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div *ngIf="ackip.touched">
+                          <div *ngIf="ackip.errors?.['required']" class="text-danger text-end">Acknowledgement Number is required</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-4"><label for="mobnumber" >Mobile Number:</label></div>
+                    <div class="col"><input type="number" name="mobnumber" id="mobnumber" class="form-control" [(ngModel)]="mob" min=6000000000 max=9999999999 required #mobip=ngModel></div>
+                </div> 
+                <div class="row">
+                    <div class="col">
+                        <div *ngIf="mobip.touched">
+                          <div *ngIf="mobip.errors?.['min']" class="text-danger text-end">Please valid Mobile number</div>
+                        </div>
+                        <div *ngIf="mobip.touched">
+                          <div *ngIf="mobip.errors?.['max']" class="text-danger text-end">Please valid Mobile number</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col"> <button type="submit" class="btn btn-primary" [disabled]="!trackForm.form.valid">Submit</button></div>
+                    <div class="col"> <button type="reset" class="btn btn-primary">Reset</button></div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</section>

@@ -1,0 +1,38 @@
+<section class="m-auto">
+    <form #loginForm="ngForm" (ngSubmit)="onsubmit()">
+        <div class="container text-center border border-2 border-dark rounded " id="border">
+            <h4 class="my-5">Staff Login</h4>
+            <div >
+                <div class="row">
+                    <div class="col"><label for="userid"><b>Staff Id :</b></label></div>
+                    <div class="col"><input type="text" name="userid" id="userid" class="form-control" [(ngModel)]="staff_id" required #staff_idip=ngModel></div>
+                </div>  
+                <div class="row">
+                    <div class="col">
+                        <div *ngIf="staff_idip.touched">
+                          <div *ngIf="staff_idip.errors?.['required']" class="text-danger text-end">Acknowledgement Number is required</div>
+                        </div>
+                      </div>
+                </div>  
+                <div class="row mt-5">
+                    <div class="col"><label for="password"><b>Password :</b></label></div>
+                    <div class="col"><input  type="password" name="password" id="password" class="form-control" [(ngModel)]="password" required #passwordip=ngModel></div>
+                </div> 
+                <div class="row">
+                    <div class="col">
+                        <div *ngIf="passwordip.touched">
+                          <div *ngIf="passwordip.errors?.['required']" class="text-danger text-end">Acknowledgement Number is required</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col"> <button type="submit" class="btn btn-primary px-5" [disabled]="!loginForm.form.valid">Submit</button></div>
+                    <div class="col"> <button type="reset" class="btn btn-primary px-5">clear</button></div>
+                </div>
+                <div class="row my-5">
+                    <div class="col"><a href="#" style="color: white;">Forgotten Password ?</a></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

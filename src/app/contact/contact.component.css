@@ -1,0 +1,9 @@
+section{
+    margin: auto;
+}
+section .col{
+    border: 1px solid black;
+}
+section a{
+    text-decoration: none;
+}

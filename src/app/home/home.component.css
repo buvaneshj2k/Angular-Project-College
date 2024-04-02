@@ -1,0 +1,37 @@
+section{
+    background-image: url(https://selvamtech.edu.in/wp-content/uploads/2022/06/DJI_0116.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+#sec1{
+    text-align: center;
+}
+#sec2{
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+#sec1 .card{
+    opacity: 0.8;   
+    background-color: black;
+    color: white;   
+}
+#sec2 .card{  
+    background-color: black;
+    color: white;   
+}
+.carousel-control-prev,.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#article1{
+    background-image: url(https://img.freepik.com/premium-photo/blurred-interior-public-library-with-tables-chairs-bookshelves-education-books-day_32485-752.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+#article1 img{
+    height: 600px;
+}
